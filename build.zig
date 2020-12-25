@@ -34,7 +34,7 @@ pub fn build(b: *std.build.Builder) !void {
 
         // compute and add the include paths for both SDL2 and SDL_image
         const include_path = if (target.getAbi() == .msvc)
-            "include/SDL2"
+            "include/"
         else if (target.getCpuArch() == .x86_64)
             "x86_64-w64-mingw32/include/SDL2"
         else

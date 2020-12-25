@@ -22,11 +22,11 @@ If you don't want to use submodules, obtain a copy of [SDL.zig](https://github.c
 ### Linux
 Install the development packages listed below and invoke `zig build`.
 
-#### Packages (Debian)
+#### Packages (Debian, Ubuntu)
 - `libsdl2-dev`
 - `libsdl2-image-dev`
 
-#### Packages (Arch Linux / Manjaro)
+#### Packages (Arch Linux, Manjaro)
 - `sdl2`
 - `sdl2_image`
 
