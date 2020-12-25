@@ -10,6 +10,15 @@ This example requires **Zig 0.7.1**, you can obtain a copy for your system [here
 
 **Do not download a `master` build! There is currently something broken in `translate-c` that makes it impossible to import SDL2 headers!**
 
+### Prerequisites
+Clone this repository with `git` recursively and change into the cloned working directory:
+```
+git clone https://github.com/MasterQ32/SDL.zig-Example sdl-example --recursive
+cd sdl-example
+```
+
+If you don't want to use submodules, obtain a copy of [SDL.zig](https://github.com/MasterQ32/SDL.zig) and copy it into `deps/sdl`.
+
 ### Linux
 Install the development packages listed below and invoke `zig build`.
 
