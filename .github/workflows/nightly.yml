@@ -108,7 +108,7 @@ jobs:
         run: tree
 
       - name: Build
-        run: zig build -Dtarget=${{matrix.target}} "-Dsdl-sdk=SDL2-2.0.14" "-Dsdl-image-sdk=SDL2_image-2.0.5"
+        run: zig build -Dtarget=${{matrix.target}} "-Dsdl-sdk=SDL2-2.0.14" "-Dsdl-image-sdk=SDL2_image-2.0.5" --verbose
 
   build-macos:
     runs-on: macos-latest
