@@ -17,7 +17,7 @@ jobs:
         with:
           submodules: "recursive"
 
-      - name: Install dependencies (Linux)
+      - name: Install dependencies
         run: sudo apt-get install libsdl2-dev libsdl2-image-dev
 
       - name: Setup Zig
@@ -109,3 +109,22 @@ jobs:
 
       - name: Build
         run: zig build -Dtarget=${{matrix.target}} "-Dsdl-sdk=SDL2-2.0.14" "-Dsdl-image-sdk=SDL2_image-2.0.5"
+
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+
+      - name: Install dependencies
+        run: brew install sdl2 sdl2_image
+
+      - name: Setup Zig
+        uses: goto-bus-stop/setup-zig@v1
+        with:
+          version: 0.7.1
+
+      - name: Build
+        run: zig build
