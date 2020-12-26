@@ -41,6 +41,16 @@ zig build -Dsdl-sdk=C:\Users\MYUSERNAME\...\SDL2-2.X.Y -Dsdl-image-sdk=C:\Users\
 ```
 to build your project. The build script will auto-detect depending on your target if the *Visual C++ 32/64-bit* or *MinGW 32/64-bit* folder layout should be used.
 
+### MacOS
+
+Install `sdl2` and `sdl2_image` via *brew*:
+```
+brew install sdl2
+brew install sdl2_image
+```
+
+then invoke `zig build`.
+
 ### Cross-Build (Host: Linux, Target: Windows)
 Just follow the instructions for building for *Windows*, but use *MinGW 32/64-bit*. Using *Visual C++ 32/64-bit* will **not** work!
 

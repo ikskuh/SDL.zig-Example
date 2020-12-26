@@ -168,7 +168,9 @@ pub fn build(b: *std.build.Builder) !void {
         exe.linkSystemLibrary("sdl2");
         exe.linkSystemLibrary("SDL2_image");
     } else {
-        @panic("Chosen OS is not supported yet!");
+        // requires sdl2 and sdl2_image to be installed via brew
+        exe.linkSystemLibrary("sdl2");
+        exe.linkSystemLibrary("SDL2_image");
     }
 
     exe.install();
