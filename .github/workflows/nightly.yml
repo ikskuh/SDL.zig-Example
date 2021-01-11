@@ -55,19 +55,19 @@ jobs:
         with:
           version: master
 
-      - name: Install VisualStudio
-        if: ${{ matrix.target == 'x86_64-windows-msvc' }}
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          uwp: false
-          arch: x64
-
-      - name: Install VisualStudio
+      - name: Install VisualStudio (x86)
         if: ${{ matrix.target == 'i386-windows-msvc' }}
         uses: ilammy/msvc-dev-cmd@v1
         with:
           uwp: false
           arch: x86
+
+      - name: Install VisualStudio (x64)
+        if: ${{ matrix.target == 'x86_64-windows-msvc' }}
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          uwp: false
+          arch: x64
 
       - name: Download SDL2 (MinGW)
         uses: carlosperate/download-file-action@v1.0.3

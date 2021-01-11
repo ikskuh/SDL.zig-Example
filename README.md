@@ -6,9 +6,7 @@ This is a simple example project that renders the classic *bouncing DVD logo* wi
 
 ## Building
 
-This example requires **Zig 0.7.1**, you can obtain a copy for your system [here](https://ziglang.org/download/).
-
-**Do not download a `master` build! There is currently something broken in `translate-c` that makes it impossible to import SDL2 headers!**
+This example requires **Zig master**, you can obtain a copy for your system [here](https://ziglang.org/download/).
 
 ### Prerequisites
 Clone this repository with `git` recursively and change into the cloned working directory:
@@ -56,11 +54,3 @@ Just follow the instructions for building for *Windows*, but use *MinGW 32/64-bi
 
 ### Cross-Build (Host: Windows, Target: Linux)
 Not supported atm. Use WSL for this.
-
-## Known Problems
-
-### `lld-link: error: undefined symbol: ___chkstk_ms`
-For the target `target=i386-windows-gnu` this error is emitted. This is probably missing in `compiler_rt`
-
-### `***-windows-msvc`
-This target is not tested yet
