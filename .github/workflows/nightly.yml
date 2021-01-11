@@ -23,7 +23,7 @@ jobs:
       - name: Setup Zig
         uses: goto-bus-stop/setup-zig@v1
         with:
-          version: 0.7.1
+          version: master
 
       - name: SDL version
         run: sdl2-config --version
@@ -53,14 +53,21 @@ jobs:
       - name: Setup Zig
         uses: goto-bus-stop/setup-zig@v1
         with:
-          version: 0.7.1
+          version: master
 
       - name: Install VisualStudio
-        if: ${{ matrix.target == 'i386-windows-msvc' || matrix.target == 'x86_64-windows-msvc' }}
+        if: ${{ matrix.target == 'x86_64-windows-msvc' }}
         uses: ilammy/msvc-dev-cmd@v1
         with:
           uwp: false
           arch: x64
+
+      - name: Install VisualStudio
+        if: ${{ matrix.target == 'i386-windows-msvc' }}
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          uwp: false
+          arch: x86
 
       - name: Download SDL2 (MinGW)
         uses: carlosperate/download-file-action@v1.0.3
@@ -124,7 +131,7 @@ jobs:
       - name: Setup Zig
         uses: goto-bus-stop/setup-zig@v1
         with:
-          version: 0.7.1
+          version: master
 
       - name: Build
         run: zig build
